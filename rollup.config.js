@@ -21,7 +21,7 @@ export default {
         builtins(),
     ],
     output: {
-        file: resolve('lib/index.js'),
+        file: resolve('lib/xlsx.umd.js'),
         format: 'umd',
         globals: {
             xlsx: 'XLSX'
