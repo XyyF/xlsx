@@ -10,7 +10,8 @@
   "author": "rengar",
   "license": "ISC",
   "dependencies": {
-    "xlsx": "0.14.3"
+    "xlsx": "0.14.3",
+    "zrender": "^4.0.7"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",

@@ -1,3 +1,3 @@
-import Xlsx from 'xlsx'
+import Xlsx from './xlsx'
 
 window.XLSX = Xlsx
