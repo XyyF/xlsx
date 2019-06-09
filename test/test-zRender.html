@@ -13,31 +13,58 @@ dom
     var zr = zrender.init(document.getElementById('test'))
     const [height, width] = [15, 15]
     var tableGroup = new zrender.Group()
-    for (let i = 0; i <= 30; i++) {
-        var line1 = new zrender.Line({
-            shape: {
-                x1: 0,
-                y1: height * i,
-                x2: width * 30,
-                y2: height * i,
-            }
-        })
-        var line2 = new zrender.Line({
-            shape: {
-                x1: width * i,
-                y1: 0,
-                x2: width * i,
-                y2: height * 30,
-            }
-        })
-        tableGroup.add(line1)
-        tableGroup.add(line2)
-    }
-    tableGroup.attr('position', [10, 10])
-    zr.add(tableGroup)
+    // for (let i = 0; i <= 30; i++) {
+    //     var line1 = new zrender.Line({
+    //         shape: {
+    //             x1: 0,
+    //             y1: height * i,
+    //             x2: width * 30,
+    //             y2: height * i,
+    //         }
+    //     })
+    //     var line2 = new zrender.Line({
+    //         shape: {
+    //             x1: width * i,
+    //             y1: 0,
+    //             x2: width * i,
+    //             y2: height * 30,
+    //         }
+    //     })
+    //     tableGroup.add(line1)
+    //     tableGroup.add(line2)
+    // }
+    // tableGroup.attr('position', [10, 10])
+    // zr.add(tableGroup)
 
     DrawUtil.initHoverText(zr)
-    zr.add(DrawUtil.drawText('你好，在干嘛呐？', 30, 30))
+    zr.add(new zrender.Rect({
+        position: [30, 30],
+        scale: [1, 1],
+        style: {
+            fill: 'red',
+            textPosition: [10, 20],
+            textAlign: 'left',
+            text: '1231dadwadadadadawdadawd',
+        },
+        shape: {
+            x: 100,
+            y: 50,
+            width: 150,
+            height: 100
+        }
+    }).attr({
+        style: {
+            textBorderRadius: 3,
+            textBackgroundColor: 'rgba(0, 255, 0, 0.3)',
+            textBorderColor: '#191933',
+            textBorderWidth: 2,
+            textBoxShadowBlur: 5,
+            textBoxShadowColor: '#1099ee',
+            textBoxShadowOffsetX: 2,
+            textBoxShadowOffsetY: 5,
+            textPadding: [15, 20, 5, 10]
+        }
+    }))
     zr.add(DrawUtil.drawCircle({x: 50, y: 50, txt: '哈哈'}, '#FAD'))
     zr.add(DrawUtil.drawHollowCircle({x: 100, y: 100, txt: '空心圆'}, '#DAF'))
     zr.add(DrawUtil.drawIsogon({x: 200, y: 200, txt: 'jack'}, '#ADF'))
